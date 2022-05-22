@@ -3,14 +3,16 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 // import { updateProfile } from 'firebase/auth';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 
 const Signup = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [createUserWithEmailAndPassword, user, loading,error] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading,error] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [updateProfile, updating, updateError] = useUpdateProfile(auth); 
     const navigate = useNavigate()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
   
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -30,10 +32,10 @@ const Signup = () => {
         return <Loading></Loading>;
       }
       if (user || gUser) {
-        navigate('/')
+        navigate(from, { replace: true });
       }
     return (
-      <div className='flex justify-center'>
+      <div className='flex justify-center my-5'>
       <div class="card w-96 bg-base-100 shadow-xl ">
   <div class="card-body items-center text-center ">
   <div className='w-full justify-center'>
@@ -111,10 +113,12 @@ const Signup = () => {
         {signUpError}
         <input type="submit" value="Sign Up" className="btn btn-primary max-w-xs text-white w-full" />
  </form>
+ </div>
+ <p className='pt-2'>Already have an account <Link className='text-secondary ' to='/login'>Please Login</Link></p>
   <div class="divider">OR</div>
  
  <button className='btn btn-outline btn-primary w-full' onClick={() => signInWithGoogle()}>Continue with Google</button>
-            </div>
+            
     </div>
   </div>
 </div>

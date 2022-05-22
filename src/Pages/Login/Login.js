@@ -1,14 +1,18 @@
+import { sendEmailVerification } from 'firebase/auth';
 import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendEmailVerification, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [ signInWithEmailAndPassword, user, loading, error, ] = useSignInWithEmailAndPassword(auth);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
   
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -22,12 +26,12 @@ const Login = () => {
         return <Loading></Loading>;
       }
       if (user || gUser) {
-        navigate('/')
+        navigate(from, { replace: true });
       }
     
     
     return (
-        <div className='flex justify-center'>
+        <div className='flex justify-center my-5'>
         <div class="card w-96 bg-base-100 shadow-xl ">
     <div class="card-body items-center text-center ">
     <div className='w-full justify-center'>
@@ -85,11 +89,13 @@ const Login = () => {
   </div>
           <input type="submit" value="login" className="btn btn-primary max-w-xs text-white w-full" />
    </form>
+   </div>
+   <p className='pt-2'>New To Here <Link className='text-secondary ' to='/signup'>Please Sign Up</Link></p>
     <div class="divider">OR</div>
    
    <button className='btn btn-outline btn-primary w-full' onClick={() => signInWithGoogle()}>Continue with Google</button>
               </div>
-      </div>
+     
     </div>
   </div>
   </div>

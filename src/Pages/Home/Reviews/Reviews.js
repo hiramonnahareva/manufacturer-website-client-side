@@ -11,7 +11,7 @@ const Reviews = () => {
         {_id: 3, img: person3, name:'Anina Watt', description: 'User-generated content puts your customers’ experiences front and center. Although they’re not exactly traditional reviews, prospective customers can see how happy others are with your products. It helps build authenticity—something millennials love. '},
     ]
     return (   
-            <div className='bg-white mx-10 py-5'>
+            <div className='bg-white mx-20 py-5'>
                 <h2 className='text-3xl my-5 text-center font-bold text-primary'>Reviews</h2>
                 <div>
                 <div class="grid lg:grid-cols-3">
