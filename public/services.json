@@ -3,7 +3,14 @@
       "img": "./Assets/Icon/Group 1372.png",
       "name": "monitor",
       "minQuentity": 100,
-      "availableQuentity": 2000,
+      "availableQuentity": [
+        "100-200",
+        "200-300",
+        "300-400",
+        "400-500",
+        "500-600",
+        "600-700"
+      ],
       "price": "$199",
       "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product."
     },
@@ -11,7 +18,14 @@
       "img": "./Assets/Icon/Group 1373.png",
       "name": "speakers",
       "minQuentity":  100,
-      "availableQuentity": 1500,
+      "availableQuentity": [
+        "100-200",
+        "200-300",
+        "300-400",
+        "400-500",
+        "500-600",
+        "600-700"
+      ],
       "price": "$99",
       "description": "Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
@@ -19,7 +33,14 @@
       "img": "./Assets/Icon/Group 1374.png",
       "name": "Keyboard",
       "minQuentity": 100,
-      "availableQuentity": 1000,
+      "availableQuentity": [
+        "100-200",
+        "200-300",
+        "300-400",
+        "400-500",
+        "500-600",
+        "600-700"
+      ],
       "price": "$299",
       "description": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
     },
@@ -27,7 +48,14 @@
       "img": "./Assets/Icon/Group 1372.png",
       "name": "Mouse",
       "minQuentity": 100,
-      "availableQuentity": 2000,
+      "availableQuentity": [
+        "100-200",
+        "200-300",
+        "300-400",
+        "400-500",
+        "500-600",
+        "600-700"
+      ],
       "price": "$199",
       "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product."
     },
@@ -35,7 +63,14 @@
       "img": "./Assets/Icon/Group 1373.png",
       "name": "CPU",
       "minQuentity":  100,
-      "availableQuentity": 1500,
+      "availableQuentity": [
+        "100-200",
+        "200-300",
+        "300-400",
+        "400-500",
+        "500-600",
+        "600-700"
+      ],
       "price": "$99",
       "shadow": "shadow-lg",
       "description": "Amazing flyers, social media posts and brand representations that would make your brand stand out."
@@ -44,7 +79,14 @@
       "img": "./Assets/Icon/Group 1374.png",
       "name": "UPS",
       "minQuentity": 100,
-      "availableQuentity": 1000,
+      "availableQuentity": [
+        "100-200",
+        "200-300",
+        "300-400",
+        "400-500",
+        "500-600",
+        "600-700"
+      ],
       "price": "$299",
       "description": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
     }

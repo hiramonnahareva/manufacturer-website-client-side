@@ -3,7 +3,7 @@ import CpuPart from './CpuPart';
 import image1 from '../../../Assets/case.jpg';
 import image2 from '../../../Assets/motherboard.jpg';
 import image3 from '../../../Assets/processor.jpg';
-import image4 from '../../../Assets/CGA Card.jpg.crdownload';
+import image4 from '../../../Assets/download.jpg';
 import image5 from '../../../Assets/ram.jpg';
 import image6 from '../../../Assets/fan.jpg';
 
