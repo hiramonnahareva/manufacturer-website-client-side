@@ -1,18 +1,44 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Modal = ({ order, setOrder }) => {
-    const {_id, name, availableQuentity} = order;
+    const {_id, name, availableQuentity, price} = order;
     const formSubmit = event => {
         event.preventDefault();
         const availableQuentity = event.target.available.value;
         console.log(_id,availableQuentity,  name );
+        const order = {
+            orderId: _id,
+            price: price,
+            order: name,
+            availableQuentity,
+            customer:user.displayName,
+            email:user.email,
+            address:event.target.address.value,
+            phone:event.target.phone.value,
+        }
+        fetch(`http://localhost:5000/order/${user.email}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data){
+                toast.success(`You order is booked`)
+            }
+            else{
+                toast.error('somethign is wrong')
+            }
+        })
         setOrder(null);
         
     }
-    console.log(order)
-    // const { name, availableQuentity } = order;
     const [user] = useAuthState(auth);
     return (
         <div>
@@ -31,7 +57,7 @@ const Modal = ({ order, setOrder }) => {
                             }
                         </select>
                         <input type="number" name='phone' placeholder="Type here" className="input input-bordered w-full max-w-xs my-2" />
-                        <input type="text" name='Address' placeholder="Type here" className="input input-bordered w-full max-w-xs my-2" />
+                        <input type="text" name='address' placeholder="Type here" className="input input-bordered w-full max-w-xs my-2" />
                         <input type="submit" value='submit' className="input text-center text-xl text-white bg-primary w-full max-w-xs my-2" />
                     </form>
                 </div>

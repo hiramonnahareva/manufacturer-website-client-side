@@ -16,7 +16,6 @@ const Purchase = () => {
     const url = `http://localhost:5000/service/${id}`;
     const { data: service, isLoading } = useQuery(['service', id], () => fetch(url).then(res => res.json()))
     const [order, setOrder] = useState(service);
-    console.log(service?.availableQuentity)
     if (isLoading) {
         return <Loading></Loading>
     }
