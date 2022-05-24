@@ -35,8 +35,8 @@ const Login = () => {
     
     return (
         <div className='flex justify-center my-5'>
-        <div class="card w-96 bg-base-100 shadow-xl ">
-    <div class="card-body items-center text-center ">
+        <div className="card w-96 bg-base-100 shadow-xl ">
+    <div className="card-body items-center text-center ">
     <div className='w-full justify-center'>
               <div>
               <h2 className='text-3xl text-primary'>Login</h2>
@@ -94,7 +94,7 @@ const Login = () => {
    </form>
    </div>
    <p className='pt-2'>New To Here <Link className='text-secondary ' to='/signup'>Please Sign Up</Link></p>
-    <div class="divider">OR</div>
+    <div className="divider">OR</div>
    
    <button className='btn btn-outline btn-primary w-full' onClick={() => signInWithGoogle()}>Continue with Google</button>
               </div>

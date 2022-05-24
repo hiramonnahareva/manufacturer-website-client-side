@@ -42,11 +42,11 @@ const Modal = ({ order, setOrder }) => {
     const [user] = useAuthState(auth);
     return (
         <div>
-            <input type="checkbox" id="Order-modal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
-                    <label for="Order-modal" class="btn btn-sm btn-circle btn-primary absolute right-2 top-2">✕</label>
-                    <h3 class="font-bold text-lg my-2">Ordered Item {name} </h3>
+            <input type="checkbox" id="Order-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <label for="Order-modal" className="btn btn-sm btn-circle btn-primary absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg my-2">Ordered Item {name} </h3>
                     <form onSubmit={formSubmit}>
                         <input type="text" disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs my-2" />
                         <input type="email" disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs my-2" />

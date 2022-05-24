@@ -7,7 +7,7 @@ import ConfirmModal from '../../Shared/ConfirmModal';
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(user.email)
+    // console.log(user.email)
     const [click, setclick] = useState(null)
     useEffect(() => {
         if (user) {
@@ -38,7 +38,7 @@ const MyOrders = () => {
                                 <td>{order.availableQuentity}</td>
                                 <td>{order.order}</td>
                                 <td>
-                                    {(order.price && !order.paid) && <label for="Confirmation" onClick={()=> setclick(order._id)} class="btn modal-button btn-xs btn-primary mr-5">Cancle</label>}
+                                    {(order.price && !order.paid) && <label for="Confirmation" onClick={()=> setclick(order._id)} className="btn modal-button btn-xs btn-primary mr-5">Cancle</label>}
                                     {(order.price && !order.paid) && <Link to={`/dashboard/payment:${order?.orderId}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
                                     {(order.price && order.paid) && <span className='text-success'>paied</span>}
                                 </td>
@@ -48,7 +48,7 @@ const MyOrders = () => {
                 </tbody>
             </table>
             {
-                click && <ConfirmModal click={click}></ConfirmModal>
+                click && <ConfirmModal user={user.email} setOrders={setOrders}></ConfirmModal>
             }
         </div>
     );

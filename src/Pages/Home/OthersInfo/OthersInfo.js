@@ -14,7 +14,7 @@ const OthersInfo = () => {
     
     return (
         <div className='mx-20'>
-             <div class="divider"></div> 
+             <div className="divider"></div> 
        
         <div className='lg:flex justify-evenly'>
             {
@@ -42,7 +42,7 @@ const OthersInfo = () => {
                  <span className='text-6xl text-secondary'><GoGift/></span>
             </div> */}
         </div>
-        <div class="divider"></div> 
+        <div className="divider"></div> 
         </div>
     );
 };

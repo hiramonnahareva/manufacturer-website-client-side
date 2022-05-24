@@ -14,7 +14,7 @@ const Reviews = () => {
             <div className='bg-white mx-20 py-5'>
                 <h2 className='text-3xl my-5 text-center font-bold text-primary'>Reviews</h2>
                 <div>
-                <div class="grid lg:grid-cols-3">
+                <div className="grid lg:grid-cols-3">
                 {
                     reviews.map((review) => <Review review={review}></Review>)
                }

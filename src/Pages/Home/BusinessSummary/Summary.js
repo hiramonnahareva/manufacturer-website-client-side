@@ -34,14 +34,14 @@ const Summary = () => {
 </div>
 
 <div className='flex justify-center my-20'>
-<div class="card w-[800px] bg-accent shadow-xl mx-5">
-  <div class="card-body">
-    <h2 class="card-title text-primary text-3xl font-bold font-sans">Have any question about us or get a projects request ?</h2>
+<div className="card w-[800px] bg-accent shadow-xl mx-5">
+  <div className="card-body">
+    <h2 className="card-title text-primary text-3xl font-bold font-sans">Have any question about us or get a projects request ?</h2>
     <p className='text-2xl my-2'>Don't hesitate to contact us</p>
-    <div class="card-actions justify-end">
+    <div className="card-actions justify-end">
      <div>
-     <button class="btn btn-secondary my-2 mr-4 text-white">Request For Quote</button>
-     <button class="btn btn-primary my-2">Contact Us</button>
+     <button className="btn btn-secondary my-2 mr-4 text-white">Request For Quote</button>
+     <button className="btn btn-primary my-2">Contact Us</button>
      </div>
     </div>
   </div>
