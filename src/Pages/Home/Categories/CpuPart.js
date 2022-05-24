@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CpuPart = ({cpuPart}) => {
     const {img, name, description} = cpuPart;
     return (

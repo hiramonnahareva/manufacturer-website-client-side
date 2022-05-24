@@ -10,6 +10,7 @@ const MakeAdmin = () => {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res=>res.json()))
+    .then(data => console.log(data))
     if(isLoading){
       return <Loading></Loading>
     }

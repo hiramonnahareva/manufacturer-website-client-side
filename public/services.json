@@ -1,93 +1,93 @@
 [
     {
-      "img": "./Assets/Icon/Group 1372.png",
+      "img": "https://i.ibb.co/3C10r91/case.jpg",
       "name": "monitor",
       "minQuentity": 100,
       "availableQuentity": [
-        "100-200",
-        "200-300",
-        "300-400",
-        "400-500",
-        "500-600",
-        "600-700"
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600"
       ],
       "price": "$199",
-      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product."
+      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
     {
-      "img": "./Assets/Icon/Group 1373.png",
+      "img": "https://i.ibb.co/3C10r91/case.jpg",
       "name": "speakers",
       "minQuentity":  100,
       "availableQuentity": [
-        "100-200",
-        "200-300",
-        "300-400",
-        "400-500",
-        "500-600",
-        "600-700"
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600"
       ],
       "price": "$99",
-      "description": "Amazing flyers, social media posts and brand representations that would make your brand stand out."
+      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
     {
-      "img": "./Assets/Icon/Group 1374.png",
+      "img": "https://i.ibb.co/3C10r91/case.jpg",
       "name": "Keyboard",
       "minQuentity": 100,
       "availableQuentity": [
-        "100-200",
-        "200-300",
-        "300-400",
-        "400-500",
-        "500-600",
-        "600-700"
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600"
       ],
       "price": "$299",
-      "description": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
     {
-      "img": "./Assets/Icon/Group 1372.png",
+      "img": "https://i.ibb.co/3C10r91/case.jpg",
       "name": "Mouse",
       "minQuentity": 100,
       "availableQuentity": [
-        "100-200",
-        "200-300",
-        "300-400",
-        "400-500",
-        "500-600",
-        "600-700"
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600"
       ],
       "price": "$199",
-      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product."
+      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
     {
-      "img": "./Assets/Icon/Group 1373.png",
+      "img": "https://i.ibb.co/3C10r91/case.jpg",
       "name": "CPU",
       "minQuentity":  100,
       "availableQuentity": [
-        "100-200",
-        "200-300",
-        "300-400",
-        "400-500",
-        "500-600",
-        "600-700"
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600"
       ],
       "price": "$99",
       "shadow": "shadow-lg",
-      "description": "Amazing flyers, social media posts and brand representations that would make your brand stand out."
+      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
     {
-      "img": "./Assets/Icon/Group 1374.png",
+      "img": "https://i.ibb.co/3C10r91/case.jpg",
       "name": "UPS",
       "minQuentity": 100,
       "availableQuentity": [
-        "100-200",
-        "200-300",
-        "300-400",
-        "400-500",
-        "500-600",
-        "600-700"
+        "100",
+        "200",
+        "300",
+        "400",
+        "500",
+        "600"
       ],
       "price": "$299",
-      "description": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+      "description": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product.Amazing flyers, social media posts and brand representations that would make your brand stand out."
     }
   ]
