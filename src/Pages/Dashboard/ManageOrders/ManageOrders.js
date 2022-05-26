@@ -11,7 +11,7 @@ const ManageOrders = () => {
     const [deleteOrder, setdeleteOrder] = useState(null)
     useEffect(() => {
         if (user) {
-            fetch(`https://assignment-12-server.onrender.com/order?email:${user.email}`, {
+            fetch(`https://assignment-12-server.onrender.com/order`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`,
                 }
@@ -27,10 +27,11 @@ const ManageOrders = () => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Customer</th>
-                        <th>Ordered Quentity</th>
-                        <th>Parts Name</th>
-                        <th>Payment</th>
+                        <th>Product</th>
+                        <th>Quentity slots</th>
+                        <th>Delete</th>
+                        <th>Status</th>
+                        <th>payment</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,12 +39,21 @@ const ManageOrders = () => {
                         orders.map((order, index) =>
                             <tr key={index}>
                                 <th>{index + 1}</th>
-                                <td>{order.customer}</td>
-                                <td>{order.availableQuentity}</td>
                                 <td>{order.order}</td>
+                                <td>{order.availableQuentity.length}</td>
+                                {/* <td>{order.order}</td> */}
                                 <td>
                                     {order && <label for="Confirmation" onClick={()=> setdeleteOrder(order._id)} className="btn modal-button btn-xs btn-primary mr-5">Delete</label>}
                                 </td>
+                                <td>
+                                    {order.paid && <button  className="btn modal-button btn-xs bg-green-400 mr-5">shipped</button> }
+                                    {!order.paid &&<button  className="btn modal-button btn-xs btn-error mr-5">panding</button> }
+                                </td>
+                                <td>
+                                    {order.paid && <button  className="btn modal-button btn-xs bg-green-400 mr-5">paid</button> }
+                                    {!order.paid && <button  className="btn modal-button btn-xs btn-error mr-5">unpaid</button> }
+                                </td>
+                                 
                             </tr>
                         )
                     }
