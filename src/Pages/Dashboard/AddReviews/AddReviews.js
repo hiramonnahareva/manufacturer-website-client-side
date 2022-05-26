@@ -26,6 +26,7 @@ const AddReviews = () => {
                         img: img,
                         reviewer: data.name,
                         description: data.describe,
+                        rating: data.rating,
 
                     }
                     fetch('https://assignment-12-server.onrender.com/review', {
@@ -81,15 +82,29 @@ const AddReviews = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price.message}</span>}
-                        {errors.price?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.price.message}</span>}
+                        {errors.describe?.type === 'required' && <span className="label-text-alt text-red-500">{errors.describe.message}</span>}
+                        {errors.describe?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.describe.message}</span>}
                     </label>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">Add Icon</span>
+                            <span className="label-text">Add Ratings</span>
                         </label>
+                        <input
+                        type="number"
+                        placeholder="Product Name"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("rating", {
+                            required: {
+                                value: true,
+                                message: 'Rating is Required'
+                            },
+                        })}
+                    />
+                    <label className="label">
+                        {errors.rating?.type === 'required' && <span className="label-text-alt text-red-500">{errors.rating.message}</span>}
+                    </label>
                         <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                            {errors.rating?.type === 'required' && <span className="label-text-alt text-red-500">{errors.rating.message}</span>}
                         </label>
                     </div>
                     <input
