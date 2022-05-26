@@ -56,8 +56,8 @@ const Modal = ({ order, setOrder }) => {
                                 availableQuentity && availableQuentity.map((available) => <option value={available}>{available}</option>)
                             }
                         </select>
-                        <input type="number" name='phone' placeholder="Type here" className="input input-bordered w-full max-w-xs my-2" />
-                        <input type="text" name='address' placeholder="Type here" className="input input-bordered w-full max-w-xs my-2" />
+                        <input type="number" name='phone' placeholder="Your Phone Number" className="input input-bordered w-full max-w-xs my-2" />
+                        <input type="text" name='address' placeholder="Your Address" className="input input-bordered w-full max-w-xs my-2" />
                         <input type="submit" value='submit' className="input text-center text-xl text-white bg-primary w-full max-w-xs my-2" />
                     </form>
                 </div>

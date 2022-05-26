@@ -18,6 +18,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import RequirAuth from './RequirAuth';
+import Blogs from './Pages/Blogs';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
    <Routes>
      <Route path='/' element={<Home></Home>}></Route>
      <Route path='/home' element={<Home></Home>}></Route>
+     <Route path='/blogs' element={<Blogs></Blogs>}></Route>
      <Route path='/dashboard' element={
      <RequirAuth>
        <Dashboard></Dashboard>

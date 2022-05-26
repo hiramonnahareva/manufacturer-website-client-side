@@ -13,8 +13,7 @@ const Navbar = () => {
     const menuItems = <>
         <li><NavLink to='/home'>Home</NavLink></li>
         <li><NavLink to='/about'>My Protfolio</NavLink></li>
-        <li><NavLink to='/appoinment'>Our Team</NavLink></li>
-        <li><NavLink to='reviews'>Contact Us</NavLink></li>
+        <li><NavLink to='/blogs'>BLOGS</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 text-xl px-8 sticky top-0 z-10">

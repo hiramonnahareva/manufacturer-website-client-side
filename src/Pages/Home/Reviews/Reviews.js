@@ -18,7 +18,7 @@ const Reviews = () => {
                 <div>
                 <div className="grid lg:grid-cols-3">
                 {
-                    reviews.map((review) => <Review review={review}></Review>)
+                    reviews.map((review) => <Review key={review._id} review={review}></Review>)
                }
     </div> 
            </div>

@@ -7,6 +7,7 @@ const AddReviews = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const imgStorageKey = '3a756175d8da3cf8a08b98649ad47085'
     const onSubmit = data => {
+        console.log(data);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);

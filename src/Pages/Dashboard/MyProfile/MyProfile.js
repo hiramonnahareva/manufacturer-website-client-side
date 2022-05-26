@@ -38,8 +38,8 @@ const MyProfile = () => {
     return (
         <div class="card w-[60%] bg-base-100 shadow-xl">
         <div class="card-body">
-          <h2 class="card-title">hello,<span className='text-secondary'>{user?.displayName}</span></h2>
-          <p class="text-[18px]">your email account: <span className='text-secondary'>{user?.email}</span></p>
+          <h2 class="card-title">UPDATE PROFILE</h2>
+          {/* <p class="text-[18px]">your email account: <span className='text-secondary'>{user?.email}</span></p> */}
           <p>If you update your profile Please fill this form add update</p>
           <form onSubmit={handleSubmit(onSubmit)}>
  <div className="form-control w-full max-w-xs">
