@@ -18,9 +18,11 @@ const MyProfile = () => {
     }, [user])
     const onSubmit = data => {
         const {_id} = currentuser;
-        const {name, email} = data;
-        const updateUser = { name, email};
+        const {name, email, address, phone, education} = data;
+        console.log(_id, data)
+        const updateUser = {name, email, address, phone, education};
         const url = `https://assignment-12-server.onrender.com/user/${_id}`;
+       if(_id){
         fetch (url, {
             method: 'PUT',
             headers: {
@@ -34,17 +36,47 @@ const MyProfile = () => {
             toast('user added successfully');
             reset();
         })
+       }
     }
     return (
-        <div class="card w-[60%] bg-base-100 shadow-xl">
+                <div className="flex justify-evenly w-full">
+        <div class="card bg-base-100 shadow-xl my-30 ">
         <div class="card-body">
           <h2 class="card-title">hello,<span className='text-secondary'>{user?.displayName}</span></h2>
           <p class="text-[18px]">your email account: <span className='text-secondary'>{user?.email}</span></p>
-          <p>If you update your profile Please fill this form add update</p>
+          <p>If you update your profile Please fill this form add update.</p>
           <form onSubmit={handleSubmit(onSubmit)}>
  <div className="form-control w-full max-w-xs">
   <label className="label">
     <span className="label-text">Your Name</span>
+  </label>
+  <input 
+  type="text"
+   placeholder="Your Name"
+    className="input input-bordered w-full max-w-xs"
+    {...register("name", { 
+        required: {
+            value: true,
+            message: 'Name is Required'
+        },
+     })} 
+     />
+  <label className="label">
+    <span className="label-text">Your Email</span>
+  </label>
+  <input 
+  type="email"
+   placeholder="Your email"
+    className="input input-bordered w-full max-w-xs"
+    {...register("email", { 
+        required: {
+            value: true,
+            message: 'Email is Required'
+        },
+     })} 
+     />
+      <label className="label">
+    <span className="label-text">Your Address</span>
   </label>
   <input 
   type="text"
@@ -58,40 +90,33 @@ const MyProfile = () => {
      })} 
      />
       <label className="label">
-    <span className="label-text">Your Name</span>
+    <span className="label-text">Your Education</span>
   </label>
   <input 
   type="text"
-   placeholder="Your Address"
+   placeholder="Your education"
     className="input input-bordered w-full max-w-xs"
-    {...register("address", { 
+    {...register("education", { 
         required: {
             value: true,
-            message: 'Address is Required'
+            message: 'education is Required'
         },
      })} 
      />
-  <label className="label">
-  {errors.address?.type === 'required' &&  <span className="label-text-alt text-red-500">{errors.address.message}</span>}
-  </label>
 </div>
  <div className="form-control w-full max-w-xs">
   <label className="label">
-    <span className="label-text">Your Email</span>
+    <span className="label-text">Your Phone</span>
   </label>
   <input 
-  type="email"
-   placeholder="Your Email"
+  type="number"
+   placeholder="Your Phone"
     className="input input-bordered w-full max-w-xs"
-    {...register("email", { 
+    {...register("phone", { 
         required: {
             value: true,
-            message: 'Email is Required'
+            message: 'Phone is Required'
         },
-        pattern: {
-        value: /\S+@\S+\.\S+/,
-        message: 'Provide a Valid Email'
-      }
      })} 
      />
      
@@ -99,7 +124,20 @@ const MyProfile = () => {
      </div>
      </form>
           </div>
+      
       </div>
+      <div>
+          <p>Your Name: {user.displayName}</p>
+         {
+             currentuser && <div>
+                  <p>Your  Email: {currentuser.email}</p>
+          <p>Your education: {currentuser.education}</p>
+          <p>Your address: {currentuser.address}</p>
+      <p>Your New Phone: {currentuser.phone}</p>
+             </div>
+         }
+      </div>
+       </div>
     );
 };
 

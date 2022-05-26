@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [deleteOrder, setdeleteOrder] = useState(null)
     useEffect(() => {
         if (user) {
-            fetch(`https://assignment-12-server.onrender.com/order?email:${user.email}`, {
+            fetch(`https://assignment-12-server.onrender.com/order?email=${user?.email}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`,
                 }
@@ -20,7 +20,7 @@ const MyOrders = () => {
                 .then(data => setOrders(data));
         }
         
-    }, [user])
+    }, [user?.email])
     return (
         <div className="overflow-x-auto lg:w-full w-96 px-2">
 
