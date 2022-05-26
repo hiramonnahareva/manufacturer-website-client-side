@@ -1,5 +1,6 @@
 # Getting Started with Create React App
 # Like link https://parts-manufacturer.web.app/
+
 tecnology
 * react
 * routing

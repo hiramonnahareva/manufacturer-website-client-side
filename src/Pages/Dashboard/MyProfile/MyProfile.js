@@ -11,7 +11,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth) 
     useEffect(()=> {
     if(user){
-            fetch(`http://localhost:5000/user/${user.email}`)
+            fetch(`https://assignment-12-server.onrender.com/user/${user.email}`)
             .then(res => res.json())
             .then(data => setCurrent(data))
         }
@@ -20,7 +20,7 @@ const MyProfile = () => {
         const {_id} = currentuser;
         const {name, email} = data;
         const updateUser = { name, email};
-        const url = `http://localhost:5000/user/${_id}`;
+        const url = `https://assignment-12-server.onrender.com/user/${_id}`;
         fetch (url, {
             method: 'PUT',
             headers: {

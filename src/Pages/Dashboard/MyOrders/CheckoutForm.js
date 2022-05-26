@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
   const {customer, price, email, _id} = order;
   useEffect(() => {
     if (price) {
-      fetch('http://localhost:5000/create-payment-intent', {
+      fetch('https://assignment-12-server.onrender.com/create-payment-intent', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
         transactionId: paymentIntent.id,
       }
 
-      fetch(`http://localhost:5000/order/${_id}`, {
+      fetch(`https://assignment-12-server.onrender.com/order/${_id}`, {
         method: 'PATCH',
         headers: {
           'contant-type': 'application/json',
