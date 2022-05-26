@@ -16,9 +16,6 @@ const AddReviews = () => {
         fetch(url, {
             method: 'POST',
             body: formData,
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-            }
 
         })
             .then(res => res.json())
@@ -31,7 +28,7 @@ const AddReviews = () => {
                         description: data.describe,
 
                     }
-                    fetch('https://assignment-12-server.onrender.com/review', {
+                    fetch('http://localhost:5000/review', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -42,6 +39,7 @@ const AddReviews = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data) {
+                                console.log(data)
                                 toast.success('Product added successfuly')
                                 reset()
                             }

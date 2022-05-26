@@ -28,7 +28,7 @@ const Purchase = () => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{service?.name}</h2>
                     <h3 className="text-xl">Par Box Parts Quentity  <span className='text-secondary'>{service?.minQuentity}</span></h3>
-                    <h3 className="text-xl">Available Box <span className='text-secondary'>{service?.availableQuentity?.length}</span></h3>
+                    <h3 className="text-xl">Available options <span className='text-secondary'>{service?.availableQuentity?.length}</span></h3>
                     <h3 className="text-xl">Price: <span className='text-secondary'>{service?.price}</span></h3>
                     <p className='text-justify'>{service?.description}</p>
                     {

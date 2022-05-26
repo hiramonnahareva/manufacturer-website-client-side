@@ -6,9 +6,11 @@ const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
   const [cardError, setCardError] = useState('');
   const [success, setsuccess] = useState('');
+  const [loading, setLoading] = useState(false);
   const [clientSecret, setClientSecret] = useState('');
+  const [transactionId, settransactionId] = useState('');
   console.log(order)
-  const {customer, price, email} = order;
+  const {customer, price, email, _id} = order;
   useEffect(() => {
     if (price) {
       fetch('http://localhost:5000/create-payment-intent', {
@@ -22,6 +24,7 @@ const CheckoutForm = ({ order }) => {
         .then(res => res.json())
         .then(data => {
           if (data.clientSecret){
+            console.log(data)
             setClientSecret(data.clientSecret);
           }
           // console.log(data)
@@ -42,6 +45,7 @@ const CheckoutForm = ({ order }) => {
       card,
     })
     setsuccess('');
+    setLoading(true);
     if (error) {
       setCardError(error.message)
     }
@@ -62,11 +66,32 @@ const CheckoutForm = ({ order }) => {
     );
     if(intendError){
       setCardError(intendError?.message);
+      setLoading(false);
       setsuccess('')
     }
     else{
       setCardError('')
+      settransactionId(paymentIntent.id);
       setsuccess('Congatulation you are successfully payed');
+      // payment on database
+      const payment = {
+        appoinment: _id,
+        transactionId: paymentIntent.id,
+      }
+
+      fetch(`http://localhost:5000/order/${_id}`, {
+        method: 'PATCH',
+        headers: {
+          'contant-type': 'application/json',
+          // 'authorization': 
+        },
+        
+        body: JSON.stringify(payment)
+      }).then(res => res.json())
+      .then(data => {
+        setLoading(false);
+        console.log(data);
+      })
     }
     
   }
@@ -96,6 +121,11 @@ const CheckoutForm = ({ order }) => {
       </form>
       {
         cardError && <p className='text-error'>{cardError}</p>
+      }
+      {
+        success && <div><p className='text-success'>{success}</p>
+         <p> <span className="text-orange-500">{transactionId}</span></p>
+         </div>
       }
     </>
   );
