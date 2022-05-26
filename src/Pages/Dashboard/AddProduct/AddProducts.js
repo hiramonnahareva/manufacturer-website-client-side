@@ -28,7 +28,7 @@ const AddProducts = () => {
                   availableQuentity: data.availableQuentity,
                   img: img,
                 }
-                fetch('http://localhost:5000/product', {
+                fetch('https://assignment-12-server.onrender.com/product', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

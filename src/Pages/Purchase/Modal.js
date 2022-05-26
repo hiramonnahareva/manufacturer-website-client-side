@@ -19,7 +19,7 @@ const Modal = ({ order, setOrder }) => {
             address:event.target.address.value,
             phone:event.target.phone.value,
         }
-        fetch(`http://localhost:5000/order/${user.email}`, {
+        fetch(`https://assignment-12-server.onrender.com/order/${user.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -53,7 +53,7 @@ const Modal = ({ order, setOrder }) => {
 
                         <select name='available' className="select select-bordered w-full max-w-xs">
                             {
-                                availableQuentity && availableQuentity.map((available, index) => <option key={index} value={available}>{available}</option>)
+                                availableQuentity && availableQuentity.map((available) => <option value={available}>{available}</option>)
                             }
                         </select>
                         <input type="number" name='phone' placeholder="Type here" className="input input-bordered w-full max-w-xs my-2" />

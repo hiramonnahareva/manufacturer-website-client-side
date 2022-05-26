@@ -6,7 +6,7 @@ const UseToken = user => {
        const email = user?.user?.email;
        const newUser = {email: email};
        if(email){
-           fetch(`http://localhost:5000/users/${email}`, {
+           fetch(`https://assignment-12-server.onrender.com/users/${email}`, {
                method: 'PUT',
                headers: {
                    'content-type': 'application/json'
@@ -16,7 +16,6 @@ const UseToken = user => {
            .then(res => res.json())
            .then(data => {
                const accessToken = data.token;
-               console.log(accessToken)
                setToken('data', accessToken);
                localStorage.setItem('accessToken', accessToken)
                setToken(accessToken)

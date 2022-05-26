@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import ConfirmModal from '../../Shared/ConfirmModal';
 
-const MyOrders = () => {
+
+const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
     // console.log(user.email)
@@ -19,7 +19,6 @@ const MyOrders = () => {
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
-        
     }, [user])
     return (
         <div className="overflow-x-auto lg:w-full w-96 px-2">
@@ -43,9 +42,7 @@ const MyOrders = () => {
                                 <td>{order.availableQuentity}</td>
                                 <td>{order.order}</td>
                                 <td>
-                                    {(order.price && !order.paid) && <label for="Confirmation" onClick={()=> setdeleteOrder(order._id)} className="btn modal-button btn-xs btn-primary mr-5">Cancle</label>}
-                                    {(order.price && !order.paid) && <Link to={`/dashboard/order/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
-                                    {(order.price && order.paid) && <span className='text-success'>paied</span>}
+                                    {order && <label for="Confirmation" onClick={()=> setdeleteOrder(order._id)} className="btn modal-button btn-xs btn-primary mr-5">Delete</label>}
                                 </td>
                             </tr>
                         )
@@ -59,4 +56,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useForm } from 'react-hook-form';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 // import { toast } from 'react-toastify';
@@ -13,7 +13,7 @@ const Purchase = () => {
     // const [user] = useAuthState(auth) 
     const { id } = useParams();
     
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://assignment-12-server.onrender.com/service/${id}`;
     const { data: service, isLoading} = useQuery(['service', id], () => fetch(url).then(res => res.json()))
     const [order, setOrder] = useState(service);
     if (isLoading) {
