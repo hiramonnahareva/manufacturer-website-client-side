@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
         transactionId: paymentIntent.id,
       }
 
-      fetch(`http://localhost:5000/order-update/${_id}`, {
+      fetch(`https://assignment-12-server.onrender.com/order-update/${_id}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json',
