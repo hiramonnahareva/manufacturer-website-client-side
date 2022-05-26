@@ -74,15 +74,16 @@ const CheckoutForm = ({ order }) => {
       settransactionId(paymentIntent.id);
       setsuccess('Congatulation you are successfully payed');
       // payment on database
+      console.log('payment', paymentIntent)
       const payment = {
         appoinment: _id,
         transactionId: paymentIntent.id,
       }
 
-      fetch(`https://assignment-12-server.onrender.com/order/${_id}`, {
+      fetch(`http://localhost:5000/order-update/${_id}`, {
         method: 'PATCH',
         headers: {
-          'contant-type': 'application/json',
+          'content-type': 'application/json',
           // 'authorization': 
         },
         
@@ -90,7 +91,7 @@ const CheckoutForm = ({ order }) => {
       }).then(res => res.json())
       .then(data => {
         setLoading(false);
-        console.log(data);
+        // console.log(data);
       })
     }
     

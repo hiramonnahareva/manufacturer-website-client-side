@@ -57,6 +57,20 @@ const MyProfile = () => {
         },
      })} 
      />
+      <label className="label">
+    <span className="label-text">Your Name</span>
+  </label>
+  <input 
+  type="text"
+   placeholder="Your Address"
+    className="input input-bordered w-full max-w-xs"
+    {...register("address", { 
+        required: {
+            value: true,
+            message: 'Address is Required'
+        },
+     })} 
+     />
   <label className="label">
   {errors.address?.type === 'required' &&  <span className="label-text-alt text-red-500">{errors.address.message}</span>}
   </label>
@@ -80,6 +94,7 @@ const MyProfile = () => {
       }
      })} 
      />
+     
      <input type="submit" value="login" className="btn btn-primary max-w-xs text-white w-full my-4" />
      </div>
      </form>
