@@ -12,7 +12,7 @@ const AboutMe = () => {
             <h2 className='text-2xl font-semibold mt-6 mb-2'>EDUCATIONAL BACKGROUND</h2>
             <p>study at Netrakona GOVT Collage</p>
             <p>subject: Islamic History.</p>
-            <p>Year : 1st(Honours)</p>
+            <p>Year : 1st(Honors)</p>
             <p>Group: ARTS</p>
              </div>
              <div>

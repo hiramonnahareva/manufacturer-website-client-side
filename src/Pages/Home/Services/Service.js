@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Service = ({service}) => {
     const { img, _id, name, price, description, minQuentity, availableQuentity} = service;
     return (
-        <div className={'p-5 text-center m-5 px-16  border-[1px] border-gray-200' }>
+        <div className={'p-5 text-center m-5 px-16  border-[1px] border-gray-200 hover:border-0 hover:shadow-lg rounded-lg' }>
             <div className='flex justify-center'>
             <img className='w-100 rounded-lg' src={img} alt="" />
             </div>
