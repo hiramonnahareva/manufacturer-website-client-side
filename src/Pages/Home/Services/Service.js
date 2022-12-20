@@ -9,7 +9,7 @@ const Service = ({service}) => {
             <img className='w-100 rounded-lg' src={img} alt="" />
             </div>
             <h2 className='text-2xl pt-5 font-bold'>{name}</h2>
-            <h3 className='text-2xl font-bold text-primary py-2'>{price}</h3>
+            <h3 className='text-2xl font-bold text-primary py-2'>$ {price}</h3>
             <p className='text-xl text-secondary '>Par Box Parts Quentity <small>{minQuentity}</small></p>
             <p className='text-xl text-secondary '>Available options <small>{availableQuentity.length}</small></p>
             <p className='text-justify'>{description}</p>

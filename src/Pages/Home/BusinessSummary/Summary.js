@@ -22,9 +22,9 @@ const Summary = () => {
 <div className='lg:grid grid-cols-4 gap-5 justify-center'>
     {
         summary.map(summary => <div key={summary._id} className='mx-5 '>
-        <h3 className='text-6xl text-orange-400 mx-20'>{summary.icon}</h3>
+        <h3 className='text-6xl text-primary mx-20'>{summary.icon}</h3>
         <h4 className='text-3xl font-semibold my-2'>{summary.count}</h4>
-        <p className='text-2xl font-semibold text-orange-400'>{summary.info}</p>
+        <p className='text-2xl font-semibold text-primary'>{summary.info}</p>
         </div>)
     }
 
@@ -34,14 +34,14 @@ const Summary = () => {
 </div>
 
 <div className='flex justify-center my-20'>
-<div className="card w-[800px] bg-accent shadow-xl mx-5">
+<div className="card w-[800px] bg-blue-100 shadow-xl mx-5">
   <div className="card-body">
-    <h2 className="card-title text-primary text-3xl font-bold font-sans">Have any question about us or get a projects request ?</h2>
+    <h2 className="card-title text-secondary text-3xl font-bold font-sans">Have any question about us or get a projects request ?</h2>
     <p className='text-2xl my-2'>Don't hesitate to contact us</p>
     <div className="card-actions justify-end">
      <div>
-     <button className="btn btn-secondary my-2 mr-4 text-white">Request For Quote</button>
-     <button className="btn btn-primary my-2">Contact Us</button>
+     <button className="btn btn-primary my-2 mr-4">Request For Quote</button>
+     <button className="btn btn-secondary my-2 text-white">Contact Us</button>
      </div>
     </div>
   </div>

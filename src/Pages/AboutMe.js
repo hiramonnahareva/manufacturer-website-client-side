@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../Assets/doctor.png'
 
 const AboutMe = () => {
     return (

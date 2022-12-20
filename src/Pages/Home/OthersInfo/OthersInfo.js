@@ -20,7 +20,7 @@ const OthersInfo = () => {
             {
                 benifits.map( benifit => <div key={benifit._id}>
                    <div className="flex">
-                   <span className='text-5xl text-secondary'>{benifit.icon}</span>
+                   <span className='text-5xl text-primary'>{benifit.icon}</span>
                     <div className='mx-4'>
                         <p className='text-xl'>{benifit.name}</p>
                         <span className=' text-gray-400'>{benifit.info}</span>

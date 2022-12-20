@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
+import image from '../../Assets/5033256-middle.png'
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -13,7 +14,7 @@ const Navbar = () => {
     const menuItems = <>
         <li><NavLink to='/home'>Home</NavLink></li>
         <li><NavLink to='/about'>My Protfolio</NavLink></li>
-        <li><NavLink to='/blogs'>BLOGS</NavLink></li>
+        <li><NavLink to='/blogs'>Blogs</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 text-xl px-8 sticky top-0 z-10">
@@ -29,7 +30,9 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <NavLink className='text-2xl font-serif font-bold text-primary' to='/'>Parts</NavLink>
+                <NavLink className='text-2xl font-serif font-bold text-primary' to='/'>
+                    <img src={image} alt="" />
+                    Parts</NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 gap-2">

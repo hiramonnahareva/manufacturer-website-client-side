@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import SquareLoader from "react-spinners/SquareLoader";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AboutMe from './Pages/AboutMe';
@@ -19,9 +20,25 @@ import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import RequirAuth from './RequirAuth';
 import Blogs from './Pages/Blogs';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000);
+  }, [])
   return (
+    loading ? <div className="flex items-center h-[100vh] justify-center">
+      <SquareLoader 
+      color="#008ef5"
+      size={50}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+       />
+    </div> : 
     <div>
       <Navbar></Navbar>
    <Routes>
