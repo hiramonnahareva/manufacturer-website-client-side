@@ -1,19 +1,23 @@
-import React from 'react';  
+import React, { useState } from 'react';  
 import { MdAttachMoney } from 'react-icons/md';
 import { IoIosPeople } from 'react-icons/io';
 import { FaTools } from 'react-icons/fa';
 import { AiOutlineLike } from 'react-icons/ai';
-
+import ScrollTrigger from 'react-scroll-trigger';
+import CountUp from 'react-countup';
 const Summary = () => {
+    const [counterOn, setCounterOn] = useState(false);
     const summary = [
-        {_id: 1, icon:<FaTools />, count:'50+' , info: 'Parts'},
-        {_id: 2, icon:<MdAttachMoney />, count:'120M+', info: 'Annual revenue'},
-        {_id: 3, icon:<IoIosPeople />, count:'33K+', info: 'customers'},
-        {_id: 4, icon:<AiOutlineLike />, count:'100+', info: 'Reviews'},
+        {_id: 1, icon:<FaTools />, countStart: '0', countEnd:'50', countSpan: '+' , info: 'Parts'},
+        {_id: 2, icon:<MdAttachMoney />, countStart: '0', countEnd:'120', countSpan: 'M+', info: 'Annual revenue'},
+        {_id: 3, icon:<IoIosPeople />, countStart: '0', countEnd:'33', countSpan: 'K+', info: 'customers'},
+        {_id: 4, icon:<AiOutlineLike />, countStart: '0', countEnd:'100',  countSpan: '+',info: 'Reviews'},
     ]
 
+
     return (
-    <div>
+        <div>
+        <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
 <div className='flex justify-center text-center'>
 <div>
 
@@ -23,7 +27,9 @@ const Summary = () => {
     {
         summary.map(summary => <div key={summary._id} className='mx-5 '>
         <h3 className='text-6xl text-primary mx-20'>{summary.icon}</h3>
-        <h4 className='text-3xl font-semibold my-2'>{summary.count}</h4>
+        <h4 className='text-3xl font-semibold my-2'>
+            { counterOn &&  <CountUp start={summary.countStart} end={summary.countEnd} duration={2} delay={0} />   
+            }<span>{summary.countSpan}</span></h4>
         <p className='text-2xl font-semibold text-primary'>{summary.info}</p>
         </div>)
     }
@@ -47,8 +53,8 @@ const Summary = () => {
   </div>
 </div>
 </div>
+</ScrollTrigger>
 </div>
-
 
        
     );

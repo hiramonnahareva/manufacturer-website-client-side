@@ -19,7 +19,7 @@ const Categories = () => {
     return (
        
         <div className='bg-white p-2 lg:mx-20'>
-        <h2 className='text-3xl font-bold text-center mt-20 mb-5'>CPU PARTS <span className='text-primary'> CATAGORIES</span></h2>
+        <h2 className='text-3xl font-bold text-center mt-20 mb-5'>CPU Parts <span className='text-primary'> Catagories</span></h2>
        <div className='grid lg:grid-cols-3 grid-cols-1  justify-evenly'>
        {
             cpuParts.map(cpuPart => <CpuPart key={cpuPart._id} cpuPart= {cpuPart}></CpuPart>)

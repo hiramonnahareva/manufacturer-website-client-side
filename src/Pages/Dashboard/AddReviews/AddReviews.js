@@ -40,9 +40,15 @@ const AddReviews = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data) {
-                                console.log(data)
-                                toast.success('Product added successfuly')
-                                reset()
+                                console.log()
+                                if(data.massage === 'Forbidden access'){
+                                    toast.error('something is wrong')
+                                }
+                                else{
+                                    toast.success('Your review added successfuly')
+                                    reset()
+                                    
+                                }
                             }
                             else {
                                 toast.error('Failed to add product')
