@@ -25,15 +25,7 @@ const Reviews = () => {
             }
           },
           {
-            breakpoint: 800,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              initialSlide: 2
-            }
-          },
-          {
-            breakpoint: 480,
+            breakpoint: 500,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
@@ -50,10 +42,10 @@ const Reviews = () => {
     
     return (   
        <>
+           <h2 className='text-3xl my-5 text-center font-bold text-primary'>Reviews</h2>
        {
-        reviews ? 
+        reviews.length ? 
         <div className='bg-white lg:mx-20 py-5'>
-        <h2 className='text-3xl my-5 text-center font-bold text-primary'>Reviews</h2>
         <Slider {...settings}>
         {/* <div>
         <div className="grid lg:grid-cols-3"> */}

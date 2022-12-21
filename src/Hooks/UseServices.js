@@ -6,7 +6,7 @@ const UseServices = () => {
         fetch('https://assignment-12-server.onrender.com/services')
         .then(res => res.json())
         .then(data => setServices(data))
-    }, [])
+    }, [services])
     return [services];
 };
 
