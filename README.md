@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-# Like link https://parts-manufacturer.web.app/
+# Live link https://parts-manufacturer.web.app/
 
 ### feature
 * Full-stack project
